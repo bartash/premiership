@@ -5,19 +5,19 @@ import io
 
 
 # Provided CSV data
-csv_data = """,Conor,Andrew,Russ,Nathan,Luke,Mike,Patrick,Gavin,Gemini AI,Meta AI
-Champions,Man City,Arsenal,Arsenal,Man City,Man City,Man City,Arsenal,Man City,Man City,Man City
-2nd,Arsenal,Man City,Man City,Arsenal,Arsenal,Arsenal,Man City,Arsenal,Arsenal,Arsenal
-3rd,Liverpool,Man Utd,Man Utd,Liverpool,Liverpool,Liverpool,Liverpool,Man Utd,Liverpool,Spurs
-4th,Chelsea,Liverpool,Chelsea,Newcastle,Spurs,Aston Villa,Spurs,Liverpool,Man Utd,Liverpool
-5th,Man Utd,Spurs,Liverpool,Spurs,Newcastle,Man Utd,Man Utd,Newcastle,Chelsea,Chelsea
-6th,Spurs,Aston Villa,Spurs,Aston Villa,Man Utd,Spurs,Chelsea,Spurs,Newcastle,Man Utd
-7th,Newcastle,Newcastle,Aston Villa,Man Utd,Aston Villa,Chelsea,Aston Villa,Chelsea,Spurs,Newcastle
+csv_data = """🏆,Conor,Nathan,Patrick,Google docs AI assistant,Luke,Russ,Gavin,Andrew,Mike,Little Conor
+Champions,Man City,Man City,Man City,Man City,Man City,Man Utd,Arsenal,Arsenal,Man City,Man City
+2nd,Arsenal,Man Utd,Arsenal,Liverpool,Man Utd,Arsenal,Man City,Man City,Liverpool,Arsenal
+3rd,Liverpool,Arsenal,Liverpool,Chelsea,Arsenal,Man City,Man Utd,Liverpool,Arsenal,Man Utd
+4th,Man Utd,Liverpool,Man United,Arsenal,Liverpool,Newcastle,Liverpool,Chelsea,Chelsea,Chelsea
+5th,Chelsea,Newcastle,Newcastle,Man Utd,Newcastle,Chelsea,Chelsea,Man Utd,Man Utd,Liverpool
+6th,Newcastle,Chelsea,Chelsea,Spurs,Aston Villa,Liverpool,Newcastle,Newcastle,Newcastle,Newcastle
+7th,Spurs,Aston Villa,Aston Villa,West Ham,Chelsea,Aston Villa,Spurs,Aston Villa,Aston Villa,Brighton
 ,,,,,,,,,,
 ,,,,,,,,,,
-relegated,Brentford,Ipswich,Ipswich,Ipswich,Ipswich,Leicester,Leicester,Wolves,Bournemouth,Ipswich
-relegated,Fulham,Southamton,Everton,Southamton,Southamton,Southampton,Southampton,Leicester,Everton,Southamton
-20th,Bournemouth,Leicester,Southamton,Leicester,Leicester,Ipswich,Ipswich,Southampton,Ipswich,Leicester
+relegated,Nottingham Forest,Everton,Nottingham Forest,Norwich City,Wolves,Burnley,Everton,Everton,Everton,Everton
+relegated,Sheffield United,Sheffield United,Luton Town,Watford,Luton,Sheffield,Luton,Luton,Wolves,Sheffield United
+20th,Luton,Luton,Sheffield United,Leeds United,Sheffield United,Luton,Sheffield United,Sheffield United,Luton,Luton 
 """
 
 # Actual results

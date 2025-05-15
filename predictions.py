@@ -173,7 +173,12 @@ def main():
 
     predictions = load_predictions('predictions_2024_2025.csv')
     results = load_final_results('final_2024_2025.csv')
+    calculated_scores = calculate_scores(predictions, results)
 
+    # Print calculated scores
+    print("Calculated Scores for 2024/2025:")
+    for contestant, score in calculated_scores.items():
+        print(f"{contestant}: {score}")
 
 if __name__ == "__main__":
     main()

@@ -169,6 +169,11 @@ def main():
 
     print(f"\nAll scores match expected values: {all_match}")
 
+    print(f"\nLoad this season")
+
+    predictions = load_predictions('predictions1.csv')
+    results = load_final_results('final1.csv')
+
 
 if __name__ == "__main__":
     main()

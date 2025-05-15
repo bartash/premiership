@@ -143,6 +143,17 @@ def calculate_scores(predictions, results):
     return scores
 
 
+def print_sorted_scores(scores):
+    """Print scores in descending order (highest first)."""
+    print("\nScores in Descending Order:")
+    # Sort scores by value in descending order
+    sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+
+    # Print the sorted scores
+    for i, (contestant, score) in enumerate(sorted_scores, 1):
+        print(f"{i}. {contestant}: {score}")
+
+
 def main():
     # Load predictions, final results, and expected scores
     predictions = load_predictions('predictions1.csv')
@@ -169,7 +180,7 @@ def main():
 
     print(f"\nAll scores match expected values: {all_match}")
 
-    print(f"\nLoad this season")
+    print(f"\nLoad 2024/2025")
 
     predictions = load_predictions('predictions_2024_2025.csv')
     results = load_final_results('final_2024_2025.csv')
@@ -177,8 +188,8 @@ def main():
 
     # Print calculated scores
     print("Calculated Scores for 2024/2025:")
-    for contestant, score in calculated_scores.items():
-        print(f"{contestant}: {score}")
+    # Print scores in descending order
+    print_sorted_scores(calculated_scores)
 
 if __name__ == "__main__":
     main()

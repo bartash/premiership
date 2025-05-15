@@ -171,8 +171,8 @@ def main():
 
     print(f"\nLoad this season")
 
-    predictions = load_predictions('predictions1.csv')
-    results = load_final_results('final1.csv')
+    predictions = load_predictions('predictions_2024_2025.csv')
+    results = load_final_results('final_2024_2025.csv')
 
 
 if __name__ == "__main__":

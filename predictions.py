@@ -1,3 +1,6 @@
+# On cygwin:
+#  source C:/cygwin64/home/ac9/git/pycharm_projects/premiership/.venv/Scripts/activate
+
 import pandas as pd
 import numpy as np
 import csv

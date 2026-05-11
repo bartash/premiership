@@ -1,5 +1,6 @@
 # On cygwin:
 #  source C:/cygwin64/home/ac9/git/pycharm_projects/premiership/.venv/Scripts/activate
+import sys
 
 import pandas as pd
 import numpy as np
@@ -173,9 +174,24 @@ def print_sorted_scores(scores):
 
 def main():
     # Load predictions, final results, and expected scores
-    predictions = load_predictions('predictions1.csv')
-    results = load_final_results('final1.csv')
-    expected_scores = load_expected_scores('expected1.csv')
+    verify(predictions__csv='predictions1.csv', results='final1.csv', expected='expected1.csv')
+
+    print(f"\nLoad 2024/2025")
+
+    predictions = load_predictions('predictions_2024_2025.csv')
+    results = load_final_results('final_2024_2025.csv')
+    calculated_scores = calculate_scores(predictions, results)
+
+    # Print calculated scores
+    print("Calculated Scores for 2024/2025:")
+    # Print scores in descending order
+    print_sorted_scores(calculated_scores)
+
+
+def verify(predictions__csv, results, expected):
+    predictions = load_predictions(predictions__csv)
+    results = load_final_results(results)
+    expected_scores = load_expected_scores(expected)
 
     # Calculate scores
     calculated_scores = calculate_scores(predictions, results)
@@ -199,18 +215,8 @@ def main():
 
     if not all_match:
         print("error in verification")
-        return
+        sys.exit()
 
-    print(f"\nLoad 2024/2025")
-
-    predictions = load_predictions('predictions_2024_2025.csv')
-    results = load_final_results('final_2024_2025.csv')
-    calculated_scores = calculate_scores(predictions, results)
-
-    # Print calculated scores
-    print("Calculated Scores for 2024/2025:")
-    # Print scores in descending order
-    print_sorted_scores(calculated_scores)
 
 if __name__ == "__main__":
     main()

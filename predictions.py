@@ -83,6 +83,11 @@ def load_expected_scores(filename):
 
     return expected_scores
 
+print_debug = True
+
+def debug(str):
+    if print_debug:
+        print(str)
 
 def calculate_scores(predictions, results):
     """Calculate scores based on the provided rules."""
@@ -97,6 +102,7 @@ def calculate_scores(predictions, results):
 
         # 1 point for predicting the champions correctly
         if prediction['top_seven'] and prediction['top_seven'][0] == actual_top_seven[0]:
+            debug(f"{contestant} successfully predicts champions {actual_top_seven[0]}")
             score += 1
 
         # Points for correctly predicting teams in the top positions

@@ -83,7 +83,7 @@ def load_expected_scores(filename):
 
     return expected_scores
 
-print_debug = True
+print_debug = False
 
 def debug(str):
     if print_debug:

@@ -197,6 +197,10 @@ def main():
 
     print(f"\nAll scores match expected values: {all_match}")
 
+    if not all_match:
+        print("error in verification")
+        return
+
     print(f"\nLoad 2024/2025")
 
     predictions = load_predictions('predictions_2024_2025.csv')

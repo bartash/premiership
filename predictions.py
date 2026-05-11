@@ -175,6 +175,7 @@ def print_sorted_scores(scores):
 def main():
     # Load predictions, final results, and expected scores
     verify(predictions__csv='predictions1.csv', results='final1.csv', expected='expected1.csv')
+    verify(predictions__csv='predictions_2024_2025.csv', results='final_2024_2025.csv', expected='expected_2024_2025.csv')
 
     print(f"\nLoad 2024/2025")
 

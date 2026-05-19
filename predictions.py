@@ -15,12 +15,15 @@ expected_teams = {
     "Man City",
     "Man Utd",
     "Newcastle",
+    "Norwich City",
     "Nottingham Forest",
     "Palace",
     "Sheffield United",
     "Spurs",
     "Sunderland",
     "Villa",
+    "Watford",
+    "West Ham",
 }
 
 def validate_team_name(team, filename):

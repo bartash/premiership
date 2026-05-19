@@ -6,30 +6,38 @@ import csv
 
 expected_teams = {
     "Arsenal",
+    "Bournemouth",
+    "Brentford",
+    "Brighton",
     "Burnley",
     "Chelsea",
     "Everton",
+    "Fulham",
     "Leeds",
+    "Ipswich",
+    "Leicester",
     "Liverpool",
     "Luton",
     "Man City",
     "Man Utd",
     "Newcastle",
     "Norwich City",
-    "Nottingham Forest",
+    "Forest",
     "Palace",
     "Sheffield United",
+    "Southampton",
     "Spurs",
     "Sunderland",
     "Villa",
     "Watford",
     "West Ham",
+    "Wolves",
 }
 
 def validate_team_name(team, filename):
     """Avoid bad data my checking team name is canonical
     May need to update this as teams are promoted or relegated"""
-    print(f"validate {team} in {filename}")
+    debug(False, f"validate {team} in {filename}")
     if not team in expected_teams:
         print(f"Bad team {team} in {filename}")
         exit(1)
@@ -223,33 +231,35 @@ def main():
 
 
 def verify(predictions__csv, results, expected):
+    print_debug = False
+
     predictions = load_predictions(predictions__csv)
     results = load_final_results(results)
     expected_scores = load_expected_scores(expected)
 
     # Calculate scores
-    calculated_scores = calculate_scores(predictions, results, False)
+    calculated_scores = calculate_scores(predictions, results, print_debug)
 
     # Print calculated scores
-    print("Calculated Scores:")
+    print(f"Calculated Scores for {predictions__csv}")
     for contestant, score in calculated_scores.items():
-        print(f"{contestant}: {score}")
+        debug(print_debug, f"{contestant}: {score}")
 
     # Compare with expected scores
-    print("\nScore Verification:")
     all_match = True
     for contestant, expected_score in expected_scores.items():
         calculated_score = calculated_scores.get(contestant, None)
         match = calculated_score == expected_score
         if not match:
             all_match = False
-        print(f"{contestant}: Calculated={calculated_score}, Expected={expected_score}, Match={match}")
-
-    print(f"\nAll scores match expected values: {all_match}")
+        debug(print_debug, f"{contestant}: Calculated={calculated_score}, Expected={expected_score}, Match={match}")
 
     if not all_match:
         print("error in verification")
         sys.exit()
+    print(f"All scores match expected values: {all_match}")
+
+
 
 
 if __name__ == "__main__":

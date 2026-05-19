@@ -2,16 +2,33 @@
 #  source C:/cygwin64/home/ac9/git/pycharm_projects/premiership/.venv/Scripts/activate
 import sys
 
-import pandas as pd
-import numpy as np
 import csv
 
+expected_teams = {
+    "Arsenal",
+    "Burnley",
+    "Chelsea",
+    "Leeds",
+    "Liverpool",
+    "Luton",
+    "Man City",
+    "Man Utd",
+    "Newcastle",
+    "Nottingham Forest",
+    "Palace",
+    "Sheffield United",
+    "Spurs",
+    "Sunderland",
+    "Villa",
+}
 
 def validate_team_name(team, filename):
     """Avoid bad data my checking team name is canonical
     May need to update this as teams are promoted or relegated"""
     print(f"validate {team} in {filename}")
-
+    if not team in expected_teams:
+        print(f"Bad team {team} in {filename}")
+        exit(1)
 
 def load_predictions(filename):
     """Load predictions from CSV file."""

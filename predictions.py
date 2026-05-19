@@ -7,6 +7,12 @@ import numpy as np
 import csv
 
 
+def validate_team_name(team, filename):
+    """Avoid bad data my checking team name is canonical
+    May need to update this as teams are promoted or relegated"""
+    print(f"validate {team} in {filename}")
+
+
 def load_predictions(filename):
     """Load predictions from CSV file."""
     with open(filename, 'r') as f:
@@ -25,12 +31,18 @@ def load_predictions(filename):
         # Extract top 7 predictions (rows 1-7)
         for j in range(1, 8):
             if j < len(data) and i < len(data[j]):
-                top_seven.append(data[j][i])
+                team = data[j][i]
+                if contestant:
+                    validate_team_name(team, filename)
+                top_seven.append(team)
 
         # Extract bottom 3 predictions (rows 10-12)
         for j in range(10, 13):
             if j < len(data) and i < len(data[j]):
-                bottom_three.append(data[j][i])
+                team = data[j][i]
+                if contestant:
+                    validate_team_name(team, filename)
+                bottom_three.append(team)
 
         predictions[contestant] = {
             'top_seven': top_seven,
@@ -47,6 +59,7 @@ def load_final_results(filename):
         reader = csv.reader(f)
         for row in reader:
             category, team = row
+            validate_team_name(team, filename)
 
             if category == 'Champions':
                 if 'top_seven' not in results:

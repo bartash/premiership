@@ -8,6 +8,7 @@ expected_teams = {
     "Arsenal",
     "Burnley",
     "Chelsea",
+    "Everton",
     "Leeds",
     "Liverpool",
     "Luton",

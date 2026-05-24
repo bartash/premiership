@@ -131,7 +131,7 @@ def debug(print_debug, str):
     if print_debug:
         print(str)
 
-def calculate_scores(predictions, results, print_debug):
+def calculate_scores(predictions, results, print_debug, print_summary):
     """Calculate scores based on the provided rules."""
     scores = {}
 
@@ -143,48 +143,76 @@ def calculate_scores(predictions, results, print_debug):
         actual_bottom_three = results['relegated'] + [results['bottom']]
 
         # 1 point for predicting the champions correctly
+        place_1 = 0
         if prediction['top_seven'] and prediction['top_seven'][0] == actual_top_seven[0]:
             debug(print_debug, f"{contestant} successfully predicts champions {actual_top_seven[0]}")
             score += 1
+            place_1 += 1
+        if print_summary:
+            print(f"{contestant} champions score {place_1}")
 
         # Points for correctly predicting teams in the top positions
         # For each tier (top 2, top 3, etc.), check if teams are in that tier
 
         # 1 point for each team in top 2 that was predicted in any order in top 2
+        place_2 = 0
         for team in prediction['top_seven'][:2]:
             if team in actual_top_seven[:2]:
                 debug(print_debug, f"{contestant} successfully predicts {team} in top 2")
                 score += 1
+                place_2 += 1
+        if print_summary:
+            print(f"{contestant} place 2 score   {place_2}")
 
         # 1 point for each team in top 3 that was predicted in any order in top 3
+        place_3 = 0
         for team in prediction['top_seven'][:3]:
             if team in actual_top_seven[:3]:
                 debug(print_debug, f"{contestant} successfully predicts {team} in top 3")
                 score += 1
+                place_3 += 1
+        if print_summary:
+            print(f"{contestant} place 3 score   {place_3}")
 
         # 1 point for each team in top 4 that was predicted in any order in top 4
+        place_4 = 0
         for team in prediction['top_seven'][:4]:
             if team in actual_top_seven[:4]:
                 debug(print_debug, f"{contestant} successfully predicts {team} in top 4")
                 score += 1
+                place_4 += 1
+        if print_summary:
+            print(f"{contestant} place 4 score   {place_4}")
 
         # 1 point for each team in top 5 that was predicted in any order in top 5
+        place_5 = 0
         for team in prediction['top_seven'][:5]:
             if team in actual_top_seven[:5]:
                 debug(print_debug, f"{contestant} successfully predicts {team} in top 5")
                 score += 1
+                place_5 += 1
+        if print_summary:
+            print(f"{contestant} place 5 score   {place_5}")
 
         # 1 point for each team in top 6 that was predicted in any order in top 6
+        place_6 = 0
         for team in prediction['top_seven'][:6]:
             if team in actual_top_seven[:6]:
                 debug(print_debug, f"{contestant} successfully predicts {team} in top 6")
                 score += 1
+                place_6 += 1
+        if print_summary:
+            print(f"{contestant} place 6 score   {place_6}")
 
         # 1 point for each team in top 7 that was predicted in any order in top 7
+        place_7 = 0
         for team in prediction['top_seven']:
             if team in actual_top_seven:
                 debug(print_debug, f"{contestant} successfully predicts {team} in top 7")
                 score += 1
+                place_7 += 1
+        if print_summary:
+            print(f"{contestant} place 7 score   {place_7}")
 
         # 1 point for each team in bottom 3 that was predicted in any order
         for team in prediction['bottom_three']:
@@ -222,7 +250,7 @@ def main():
 
     predictions = load_predictions('predictions_2025_2026.csv')
     results = load_final_results('final_2025_2026.csv')
-    calculated_scores = calculate_scores(predictions, results, False)
+    calculated_scores = calculate_scores(predictions, results, False, True)
 
     # Print calculated scores
     print("Calculated Scores for 2025/2026:")
@@ -238,7 +266,7 @@ def verify(predictions__csv, results, expected):
     expected_scores = load_expected_scores(expected)
 
     # Calculate scores
-    calculated_scores = calculate_scores(predictions, results, print_debug)
+    calculated_scores = calculate_scores(predictions, results, print_debug, False)
 
     # Print calculated scores
     print(f"Calculated Scores for {predictions__csv}")

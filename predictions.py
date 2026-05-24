@@ -215,15 +215,24 @@ def calculate_scores(predictions, results, print_debug, print_summary):
             print(f"{contestant} place 7 score   {place_7}")
 
         # 1 point for each team in bottom 3 that was predicted in any order
+        bottom_3 = 0
         for team in prediction['bottom_three']:
             if team in actual_bottom_three:
                 debug(print_debug, f"{contestant} successfully predicts {team} in bottom 3")
                 score += 1
+                bottom_3 += 1
+        if print_summary:
+            print(f"{contestant} bottom 3 score  {bottom_3}")
 
         # 1 point for bottom being correct in addition to the points for being in the bottom 3
+        last = 0
         if prediction['bottom_three'] and prediction['bottom_three'][-1] == results['bottom']:
             debug(print_debug, f"{contestant} successfully predicts {team} is bottom")
             score += 1
+            last += 1
+        if print_summary:
+            print(f"{contestant} last    score   {last}")
+
 
         scores[contestant] = score
 

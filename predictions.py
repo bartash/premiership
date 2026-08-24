@@ -258,12 +258,12 @@ def main():
 
     print(f"\nLoad 2024/2025")
 
-    predictions = load_predictions('predictions_2025_2026.csv')
-    results = load_final_results('final_2025_2026.csv')
+    predictions = load_predictions('predictions_2026_2027.csv')
+    results = load_final_results('final_2026_2027.csv')
     calculated_scores = calculate_scores(predictions, results, False, True)
 
     # Print calculated scores
-    print("Calculated Scores for 2025/2026:")
+    print("Calculated Scores for 2026/2027:")
     # Print scores in descending order
     print_sorted_scores(calculated_scores)
 

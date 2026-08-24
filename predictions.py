@@ -285,15 +285,19 @@ def verify(predictions__csv, results, expected):
 
     # Compare with expected scores
     all_match = True
+    err_str=None
     for contestant, expected_score in expected_scores.items():
         calculated_score = calculated_scores.get(contestant, None)
         match = calculated_score == expected_score
         if not match:
             all_match = False
-        debug(print_debug, f"{contestant}: Calculated={calculated_score}, Expected={expected_score}, Match={match}")
+            err_str = f"{contestant}: Calculated={calculated_score}, Expected={expected_score}, Match={match}"
+        debug(print_debug, err_str)
 
     if not all_match:
-        print("error in verification")
+        print("error in verification on {predictions__csv} {expected} files with results: {results}".
+              format(predictions__csv=predictions__csv, expected=expected, results=results))
+        print(err_str)
         sys.exit()
     print(f"All scores match expected values: {all_match}")
 

@@ -254,6 +254,7 @@ def main():
     # Load predictions, final results, and expected scores
     verify(predictions__csv='predictions_2023_2024.csv', results='final_2023_2024.csv', expected='expected_2023_2024.csv')
     verify(predictions__csv='predictions_2024_2025.csv', results='final_2024_2025.csv', expected='expected_2024_2025.csv')
+    verify(predictions__csv='predictions_2025_2026.csv', results='final_2025_2026.csv', expected='expected_2025_2026.csv')
 
     print(f"\nLoad 2024/2025")
 

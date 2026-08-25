@@ -1,13 +1,13 @@
-,Conor,Gavin,Andrew,Nathan,Patrick,Luke,Russ,Gemini 3.1 Pro Extended (Dave),Claude Sonnet 5
-Champions,Arsenal,Man City,Man City,Arsenal,Arsenal,Arsenal,Arsenal,Arsenal,Arsenal
-2nd,Man City,Arsenal,Arsenal,Liverpool,Liverpool,Man City,Man Utd,Man City,Chelsea
-3rd,Man Utd,Chelsea,Man Utd,Man City,Man City,Chelsea,Chelsea,Liverpool,Man City
-4th,Liverpool,Man Utd,Chelsea,Villa,Man Utd,Man Utd,Man City,Man Utd,Man Utd
-5th,Chelsea,Liverpool,Liverpool,Newcastle,Spurs,Liverpool,Liverpool,Chelsea,Newcastle
-6th,Everton,Spurs,Villa,Man Utd,Brentford,Villa,Brighton,Villa,Villa
-7th,Spurs,Villa,Brentford,Chelsea,Chelsea,Spurs,Villa,Spurs,Liverpool
+,Conor,Gavin,Andrew,Nathan,Patrick,Luke,Russ*,Gemini 3.1 Pro Extended (Dave),Claude Sonnet 5,Owen
+Champions,Arsenal,Man City,Man City,Arsenal,Arsenal,Arsenal,Arsenal,Arsenal,Arsenal,Arsenal
+2nd,Man City,Arsenal,Arsenal,Liverpool,Liverpool,Man City,Man Utd,Man City,Chelsea,Chelsea
+3rd,Man Utd,Chelsea,Man Utd,Man City,Man City,Chelsea,Chelsea,Liverpool,Man City,Man Utd
+4th,Liverpool,Man Utd,Chelsea,Villa,Man Utd,Man Utd,Man City,Man Utd,Man Utd,Liverpool
+5th,Chelsea,Liverpool,Liverpool,Newcastle,Spurs,Liverpool,Liverpool,Chelsea,Newcastle,Villa
+6th,Everton,Spurs,Villa,Man Utd,Brentford,Villa,Brighton,Villa,Villa,Man City
+7th,Spurs,Villa,Brentford,Chelsea,Chelsea,Spurs,Villa,Spurs,Liverpool,Brentford
 ,,,,,,,,,
 ,,,,,,,,,
-relegated,Coventry,Coventry,Fulham,Hull,Newcastle,Coventry,Fulham,Coventry,Coventry
-relegated,Ipswich,Palace,Ipswich,Ipswich,Forest,Hull,Hull,Ipswich,Ipswich
-20th,Hull,Hull,Hull,Coventry,Hull,Ipswich,Ipswich,Hull,Hull
+relegated,Coventry,Coventry,Fulham,Hull,Newcastle,Coventry,Fulham,Coventry,Coventry,Forest
+relegated,Ipswich,Palace,Ipswich,Ipswich,Forest,Hull,Hull,Ipswich,Ipswich,Ipswich
+20th,Hull,Hull,Hull,Coventry,Hull,Ipswich,Ipswich,Hull,Hull,Hull
